@@ -1,0 +1,24 @@
+---
+# tasks file for roles/webserver
+
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
+
+    - name: copy website
+      copy:
+        src: Static-website/
+        dest: /var/www/html/
+        owner: apache
+        group: apache    
+        mode: '0755'
+      notify: restart httpd 
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+        enabled: true
+       
+

@@ -1,0 +1,7 @@
+---
+- name: main playbook for role
+  hosts: all
+  become: yes
+  roles:
+    - webserver
+
