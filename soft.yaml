@@ -1,9 +1,0 @@
----
-- name: install software
-  hosts: pc1
-  become: yes
-  tasks:
-    - name: install httpd on pc2 server 
-      yum:
-        name: httpd
-        state: present
